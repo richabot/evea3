@@ -4,15 +4,19 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-// import { AuthContext } from "./context/AuthContext";
-// import {CartContext} from "./context/CartContext"
+import { AuthProvider } from "./context/AuthContext";
+// eslint-disable-next-line
+import { AuthContext } from "./context/AuthContext";
+ import {CartProvider} from "./context/CartContext"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
   
-      
+    <AuthProvider> 
+        <CartProvider>
     <App />
-    
+    </CartProvider>
+    </AuthProvider> 
 
     </BrowserRouter>
 );
